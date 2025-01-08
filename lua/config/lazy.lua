@@ -27,7 +27,9 @@ require("lazy").setup({
         -- import your plugins
         { import = "plugins" },
         -- TODO
-        -- some tabs
+        -- some tabs / harpoon
+        -- autopairs
+        -- cmp configuration / ui
         -- some status line
         -- mason just for lua-lsp?
         -- some other useful things?
