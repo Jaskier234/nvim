@@ -29,6 +29,7 @@ require("lazy").setup({
         -- TODO
         -- some tabs / harpoon
         -- autopairs
+        -- git mappings
         -- cmp configuration / ui
         -- some status line
         -- mason just for lua-lsp?

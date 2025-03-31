@@ -64,8 +64,16 @@ return {
         }
 
         require('lspconfig').clangd.setup {
-            on_attach = config.on_attach,
+            on_attach = function()
+                config.on_attach()
+
+                -- Add clangd specific mapping
+                vim.keymap.set("n", "<leader>hh", ":ClangdSwitchSourceHeader <CR>")
+            end,
+            cmd = {"docker", "run", "-i", "-w=/home/artur/onyx-engine", "--volume=/home/artur/onyx-engine/:/home/artur/onyx-engine", "registry.gitlab.com/onyxtms/onyx-engine/main", "clangd"},
+            -- cmd = {"docker run -it registry.gitlab.com/onyxtms/onyx-engine/main clangd"},
         }
+
 
         vim.g.rustaceanvim = {
             -- LSP configuration
